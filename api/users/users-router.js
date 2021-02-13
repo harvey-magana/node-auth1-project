@@ -1,8 +1,9 @@
 const router = require('express').Router();
 
 const Users = require('./users-model.js');
+const loginCheck = require('../auth/loggedp-in-check-middleware.js');
 
-router.get('/', (req, res) => {
+router.get('/', loginCheck, (req, res) => {
     Users.find()
         .then(users => {
             res.status(200).json(users);
