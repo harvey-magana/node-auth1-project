@@ -1,5 +1,6 @@
 module.exports = (req, res, next) => {
-    if (req.session && res.session.user) {
+    console.log(req.session)
+    if (req.session && req.session.user) {
         next();
     } else {
         res.status(401).json({

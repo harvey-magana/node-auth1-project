@@ -28,9 +28,9 @@ server.listen(port, () => console.log(`\n** Running on port ${port} **\n`));
 //14. build out the post method for logging in, using the /login endpoint
 // test in postman with the following endpoint
 //http://localhost:5000/api/auth/login
-//SESSIONS
-//15. to start using sessions, install express-session with 'npm install express-session'
-//16. in server.js file, add const session = require('express-session);
+//SESSIONS & COOKIES
+//15. to start using sessions, install express-session with 'npm install express-session' *
+//16. in server.js file, add const session = require('express-session); *
 //17. next, in server.js, create sessionConfig variable, after the variable declarations but just 
 // before the server.use() declarations
 //18. the sessionConfig is an object that contains the following:
