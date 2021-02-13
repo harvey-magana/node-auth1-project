@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 const Users = require('./users-model.js');
-const loginCheck = require('../auth/loggedp-in-check-middleware.js');
+const loginCheck = require('../auth/logged-in-check-middlewares.js');
 
 router.get('/', loginCheck, (req, res) => {
     Users.find()
