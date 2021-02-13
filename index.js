@@ -45,9 +45,9 @@ server.listen(port, () => console.log(`\n** Running on port ${port} **\n`));
 //23. import logged-in-check-middleware into users-router.js file * 
 //24. add logged-in-check-middleware as middleware to the get method in users-router.js file *
 //LOGOUT METHOD
-//25. create a get request in the auth-router.js file for logging out with a logout route.
-//26. next, install 'npm install connect-session-knex' 
-//27. add a variable that adds connect-session-knex to server.js, like the following
+//25. create a get request in the auth-router.js file for logging out with a logout route. *
+//26. next, install 'npm install connect-session-knex' *
+//27. add a variable that adds connect-session-knex to server.js, like the following *
 // const knexSessionStore = require('connect-session-knex')(session) session comes from the variable created from 
 // const session = require('express-session');
 //28. next, add a store object inside of your sessionConfig object that holds the following

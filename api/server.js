@@ -5,7 +5,7 @@ const cors = require("cors");
 const usersRouter = require("./users/users-router.js");
 const authRouter = require('./auth/auth-router.js')
 const session = require('express-session');
-//const knexSessionStore = require('connect-session-knex')(session)
+const knexSessionStore = require('connect-session-knex')(session)
 
 const server = express();
 
@@ -18,7 +18,16 @@ const sessionConfig = {
     httpOnly: true
   },
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: false,
+  store: new knexSessionStore(
+    {
+      knex: require("../database/connection.js"),
+      tablename: "sessions",
+      sidfieldname: "sid",
+      createtable: true,
+      clearInterval: 1000 * 60 * 60
+    }
+  )
 }
 
 server.use(helmet());
